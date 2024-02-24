@@ -24,6 +24,7 @@
   "workspaces": [
     "apps/docs",
     "apps/web",
+    "apps/opgg",
     "packages/*"
   ]
 }
