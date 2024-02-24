@@ -1,0 +1,16 @@
+{
+  "name": "@repo/stylelint-config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "stylelint.js"
+  ],
+  "devDependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "postcss-styled-syntax": "^0.6.2",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4"
+  }
+}
