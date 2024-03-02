@@ -1,6 +1,6 @@
 export const fontSizes = <const>{
-  h1: "32px",
-  h2: "22px",
+  h1: "30px",
+  h2: "24px",
   h3: "20px",
   h4: "18px",
   p1: "16px",
