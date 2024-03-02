@@ -1,3 +1,10 @@
+import Layout from '@/components/organisms/Layout';
+import MainSearchForm from '@/components/organisms/Main/MainSearchForm';
+
 export default function Main() {
-  return <div>op.gg</div>;
+  return (
+    <Layout>
+      <MainSearchForm />
+    </Layout>
+  );
 }
