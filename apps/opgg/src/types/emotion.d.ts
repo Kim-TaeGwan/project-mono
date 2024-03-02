@@ -1,8 +1,7 @@
-import customTheme from '@/styles/customTheme';
+import { TCustomTheme } from '@repo/tokens';
 
 import '@emotion/react';
 
-type GlobalTheme = typeof customTheme;
 declare module '@emotion/react' {
-  export interface Theme extends GlobalTheme {}
+  export interface Theme extends TCustomTheme {}
 }
