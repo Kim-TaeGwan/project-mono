@@ -1,1 +1,1 @@
-export { Select } from './atom/select';
+export { Select } from './atom/Select';

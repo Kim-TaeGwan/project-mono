@@ -1,0 +1,16 @@
+{
+  "name": "@repo/icon",
+  "version": "0.0.0",
+  "private": true,
+  "module": "dist/assets/index.ts",
+  "main": "dist/assets/index.ts",
+  "types": "dist/assets/index.ts",
+  "scripts": {
+    "svgr": "svgr --typescript --icon -d dist index-template.js src",
+    "build": "yarn svgr",
+    "dev": "yarn svgr"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0"
+  }
+}
