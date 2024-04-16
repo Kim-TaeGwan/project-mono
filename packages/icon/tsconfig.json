@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
+    "outDir": "dist",
     "moduleResolution": "node",
     "module": "esnext",
     "allowJs": true,
@@ -9,8 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react"
+    "jsx": "preserve" ,
   },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
