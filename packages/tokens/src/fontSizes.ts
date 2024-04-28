@@ -1,10 +1,23 @@
 export const fontSizes = <const>{
-  h1: "30px",
-  h2: "24px",
-  h3: "20px",
-  h4: "18px",
-  p1: "16px",
-  p2: "15px",
-  p3: "14px",
-  p4: "12px",
+  body: {
+    ["large"]: "19px",
+    ["medium"]: "17px",
+    ["small"]: "15px",
+  },
+  detail: {
+    ["large"]: "17px",
+    ["medium"]: "15px",
+    ["small"]: "13px",
+  },
+  label: {
+    ["large"]: "19px",
+    ["medium"]: "17px",
+    ["small"]: "15px",
+    ["xSmall"]: "13px",
+  },
+  links: {
+    ["large"]: "19px",
+    ["medium"]: "17px",
+    ["small"]: "15px",
+  },
 };
