@@ -1,4 +1,4 @@
-export const colors = <const>{
+export const opggColors = <const>{
   yellow: {
     ['100']: '#fae6be',
     ['600']: '#F4C258',
@@ -23,6 +23,4 @@ export const colors = <const>{
     ['1000']: '#010f19',
     ['1050']: '#020912',
   },
-  black: '#000000',
-  white: '#FFFFFF',
 };

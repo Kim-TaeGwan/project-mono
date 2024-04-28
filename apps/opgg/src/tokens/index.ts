@@ -1,2 +1,2 @@
-export * from './colors';
+export * from './opggColors';
 export * from './theme';
