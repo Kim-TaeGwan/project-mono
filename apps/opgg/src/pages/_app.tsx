@@ -14,7 +14,6 @@ const customTheme = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log('customTheme : ', customTheme);
   return (
     <>
       <ThemeProvider theme={customTheme}>
