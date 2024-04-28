@@ -1,3 +1,4 @@
+import { borderRadius } from "./borderRadius";
 import { colors } from "./colors";
 import { fontSizes } from "./fontSizes";
 import { fontWeights } from "./fontWeights";
@@ -15,6 +16,9 @@ export const theme = <const>{
   },
   fontWeights: {
     ...fontWeights,
+  },
+  borderRadius: {
+    ...borderRadius,
   },
 };
 

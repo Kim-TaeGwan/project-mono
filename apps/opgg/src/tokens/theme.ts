@@ -1,4 +1,4 @@
-import { colors, fontWeights } from '@repo/tokens';
+import { borderRadius, colors, fontWeights } from '@repo/tokens';
 
 import { opggColors } from './opggColors';
 
@@ -9,6 +9,9 @@ export const opggTheme = <const>{
   },
   fontWeights: {
     ...fontWeights,
+  },
+  borderRadius: {
+    ...borderRadius,
   },
 };
 

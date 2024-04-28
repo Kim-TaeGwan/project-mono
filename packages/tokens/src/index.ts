@@ -1,3 +1,4 @@
+export * from "./borderRadius";
 export * from "./colors";
 export * from "./fontSizes";
 export * from "./fontWeights";
