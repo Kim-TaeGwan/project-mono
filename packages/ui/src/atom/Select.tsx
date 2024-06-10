@@ -57,7 +57,7 @@ interface Option {
 interface CustomSelectProps {
   options: Option[];
   isMulti?: boolean;
-  onChange?: (value: string | string[]) => void;
+  onChange: (value: string[]) => void;
 }
 
 const Select: React.FC<CustomSelectProps> = ({
@@ -68,24 +68,23 @@ const Select: React.FC<CustomSelectProps> = ({
   const [currentValue, setCurrentValue] = useState<string[]>([]);
   const [showOptions, setShowOptions] = useState(false);
 
-  console.log('showOptions : ', showOptions);
-
   const handleShowOptions = () => {
     setShowOptions(prev => !prev);
   };
 
-  const handleOnChangeSelectValue = (selectedValue: string) => () => {
-    if (isMulti) {
-      setCurrentValue(prev => {
-        if (prev.includes(selectedValue)) {
-          return prev.filter(value => value !== selectedValue);
-        } else {
-          return [...prev, selectedValue];
-        }
-      });
-    } else {
-      setCurrentValue([selectedValue]);
-    }
+  const handleSelectValueChange = (selectedValue: string) => () => {
+    setCurrentValue(prev => {
+      let newValue;
+      if (isMulti) {
+        newValue = prev.includes(selectedValue)
+          ? prev.filter(value => value !== selectedValue)
+          : [...prev, selectedValue];
+      } else {
+        newValue = [selectedValue];
+      }
+      onChange(newValue);
+      return newValue;
+    });
   };
 
   return (
@@ -98,7 +97,7 @@ const Select: React.FC<CustomSelectProps> = ({
               <Option
                 key={data.value}
                 value={data.value}
-                onClick={handleOnChangeSelectValue(data.value)}
+                onClick={handleSelectValueChange(data.value)}
               >
                 {data.label}
               </Option>
