@@ -6,7 +6,8 @@ const SelectBox = styled.div`
   width: 200px;
   padding: 8px;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.gray['60']};
   align-self: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -58,12 +59,14 @@ interface CustomSelectProps {
   options: Option[];
   isMulti?: boolean;
   onChange: (value: string[]) => void;
+  placeholder?: string;
 }
 
 const Select: React.FC<CustomSelectProps> = ({
   options,
   isMulti = false,
   onChange,
+  placeholder,
 }) => {
   const [currentValue, setCurrentValue] = useState<string[]>([]);
   const [showOptions, setShowOptions] = useState(false);
@@ -89,7 +92,7 @@ const Select: React.FC<CustomSelectProps> = ({
 
   return (
     <SelectBox onClick={handleShowOptions}>
-      <Label>{currentValue.join(', ') || 'Select an option'}</Label>
+      <Label>{currentValue.join(', ') || (placeholder ?? '선택')}</Label>
       {showOptions && (
         <SelectOptions>
           {Array.isArray(options) &&
