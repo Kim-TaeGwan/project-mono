@@ -1,40 +1,39 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const SelectBox = styled.div`
   position: relative;
-  width: 200px;
-  padding: 8px;
+  //width: 360px;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 16px;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.gray['60']};
   align-self: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   &::before {
     content: '⌵';
     position: absolute;
-    top: 1px;
-    right: 8px;
+    top: -6px; // TODO arrow icon 넣기 전까지 임시
+    right: 16px;
     color: #49c181;
     font-size: 20px;
   }
 `;
 
 const Label = styled.label`
-  font-size: 14px;
-  margin-left: 4px;
+  font-size: ${({ theme }) => theme.fontSizes.label['medium']};
   text-align: center;
 `;
 
 const SelectOptions = styled.ul`
   position: absolute;
   list-style: none;
-  top: 42px;
+  top: 56px;
   left: 0;
   width: 100%;
   overflow: hidden;
-  height: 90px;
   padding: 0;
   border-radius: 8px;
   background-color: #222222;
@@ -42,32 +41,33 @@ const SelectOptions = styled.ul`
 `;
 
 const Option = styled.li`
-  font-size: 14px;
-  padding: 6px 8px;
+  height: 56px;
+  font-size: ${({ theme }) => theme.fontSizes.label['large']};
+  padding: 0 16px;
   transition: background-color 0.2s ease-in;
   &:hover {
     background-color: #595959;
   }
 `;
 
-interface Option {
+interface IOption {
   value: string;
   label: string;
 }
 
-interface CustomSelectProps {
-  options: Option[];
+interface ICustomSelectProps {
+  options: IOption[];
   isMulti?: boolean;
   onChange: (value: string[]) => void;
   placeholder?: string;
 }
 
-const Select: React.FC<CustomSelectProps> = ({
+const Select = ({
   options,
   isMulti = false,
   onChange,
   placeholder,
-}) => {
+}: ICustomSelectProps) => {
   const [currentValue, setCurrentValue] = useState<string[]>([]);
   const [showOptions, setShowOptions] = useState(false);
 

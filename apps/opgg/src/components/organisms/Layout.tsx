@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 const LayoutWrap = styled.div`
   height: 100vh;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Header = styled.div``;
